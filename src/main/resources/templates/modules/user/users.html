@@ -1,0 +1,80 @@
+<!-- Dashboard content -->
+<div class="container" xmlns:th="http://www.thymeleaf.org">
+    <h1 class="title">Section</h1>
+    <table id="example" class="display" style="width:100%">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>status</th>
+            <th>name</th>
+            <th>email</th>
+            <th>phone</th>
+            <th>password</th>
+        </tr>
+        </thead>
+    </table>
+
+</div>
+<!-- /Dashboard content -->
+
+<script type="text/javascript">
+    var editor;
+    editor = new $.fn.dataTable.Editor( {
+        ajax: {
+            url: "api/v1/user",
+            contentType: 'application/json',
+            dataType: "json",
+            data: function(d) {
+                return JSON.stringify(d);
+            },
+            dataSrc: "result",
+        },
+        table: "#example",
+        idSrc: 'id',
+        fields: [ {
+            label: "id",
+            name: "id",
+            type: "readonly",
+
+        }, {
+            label: "status",
+            name: "status"
+        }, {
+            label: "name:",
+            name: "name"
+        }, {
+            label: "email:",
+            name: "email"
+        }, {
+            label: "phone:",
+            name: "phone"
+        }, {
+            label: "password",
+            name: "password",
+        }
+        ]
+    } );
+
+    $('#example').DataTable( {
+        dom: "Bfrtip",
+        ajax: {
+            url: "api/v1/users",
+            dataSrc: "result",
+        },
+        columns: [
+            { data: "id" },
+            { data: "status" },
+            { data: "name" },
+            { data: "email" },
+            { data: "phone" },
+            { data: "password" },
+        ],
+        select: true,
+        buttons: [
+            { extend: "create", editor: editor },
+            { extend: "edit",   editor: editor },
+            { extend: "remove", editor: editor }
+        ]
+    } );
+
+</script>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="zh">
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+
+    <title> Dashkit :: Home</title>
+
+    <!--Core CSS -->
+    <link rel="stylesheet" href="assets/css/bulma.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="assets/css/icons.min.css">
+
+</head>
+<body>
+<div class="pageloader"></div>
+<div class="infraloader is-active"></div>
+
+<section class="hero is-fullheight is-light-grey is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column is-4 is-offset-4">
+                    <!-- Classic inputs -->
+                    <div id="classic" class="login-form-wrapper">
+                        <!-- Classic login form -->
+                        <div id="login-form" class="animated preFadeInLeft fadeInLeft">
+                            <div class="flex-card auth-card is-light-raised light-bordered card-overflow">
+                                <div class="auth-card-header header-primary">
+                                    <a href="main.html"><img src="assets/images/logos/bulkit-w.png" alt=""></a>
+                                </div>
+                                <div class="field pb-10">
+                                    <div class="control has-icons-right">
+                                        <input id="userTF" class="input is-large" type="text" placeholder="邮箱">
+                                        <span class="icon is-medium is-right">
+                                                    <i class="sl sl-icon-user"></i>
+                                                </span>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="control has-icons-right">
+                                        <input id="pwdTF" class="input is-large" type="password" placeholder="密码">
+                                        <span class="icon is-medium is-right">
+                                                    <i class="sl sl-icon-lock"></i>
+                                                </span>
+                                    </div>
+                                </div>
+                                <div id="errorTip" class="field pb-10 is-hidden has-text-danger">
+                                    登录账号或密码错误
+                                </div>
+                                <div class="pt-10 pb-10">
+                                    <button id="loginBtn" class="button button-cta btn-align primary-btn is-fullwidth btn-outlined is-bold rounded raised no-lh">登录</button>
+                                </div>
+                            </div>
+                            <p class="has-text-centered">
+                                <a class="forgot" href="#">忘记密码?</a>
+                            </p>
+                        </div>
+                        <!-- /Classic login form -->
+
+                        <!-- Classic recover form -->
+                        <div id="recover-form" class="animated preFadeInLeft fadeInLeft is-hidden">
+                            <div class="flex-card auth-card is-light-raised light-bordered card-overflow">
+                                <div class="auth-card-header header-primary">
+                                    <a href="main.html"><img src="assets/images/logos/bulkit-w.png" alt=""></a>
+                                </div>
+                                <div class="field pb-10">
+                                    <div class="control has-icons-right">
+                                        <input id="findEmailTF" class="input is-large" type="text" placeholder="邮箱地址">
+                                        <span class="icon is-medium is-right">
+                                                    <i class="sl sl-icon-paper-plane"></i>
+                                                </span>
+                                    </div>
+                                </div>
+                                <div class="pt-10 pb-10">
+                                    <button id="resetBtn" class="button button-cta btn-align primary-btn is-fullwidth btn-outlined is-bold rounded raised no-lh">重置密码</button>
+                                </div>
+                            </div>
+                            <p class="has-text-centered">
+                                <a class="return" href="#">返回登录</a>
+                            </p>
+                        </div>
+                        <!-- /Classic recover form -->
+                    </div>
+                    <!-- /Classic inputs -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Concatenated jQuery and plugins -->
+<script src="assets/js/app.js"></script>
+
+<!-- Bulkit js -->
+<script src="assets/js/components-modals.js"></script>
+<script src="assets/js/components-quickview.js"></script>
+<script src="assets/js/common.js"></script>
+
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/login.js"></script>
+</body>
+</html>

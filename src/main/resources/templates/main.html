@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="zh">
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+
+    <title> Dashkit :: Home</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+
+    <!--Core CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bulma.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="assets/css/icons.min.css">
+
+</head>
+<body>
+<div class="pageloader"></div>
+<div class="infraloader is-active"></div>        <!-- Main sidebar menu -->
+<nav class="main-menu">
+    <div class="main-menu-inner">
+        <!-- Side icon menu -->
+        <ul>
+            <li class="main-logo">
+                <a href="/"><img src="assets/images/logos/square-violet.svg" alt=""></a>
+            </li>
+            <li class="side-icon is-active" data-child-menu="dashboard-menu">
+                <i class="sl sl-icon-speedometer"></i>
+            </li>
+            <li class="side-icon" data-child-menu="user-menu">
+                <i class="sl sl-icon-people"></i>
+            </li>
+            <li class="side-icon" data-child-menu="documents-menu">
+                <i class="sl sl-icon-docs"></i>
+            </li>
+            <li class="side-icon" data-child-menu="business-menu">
+                <i class="sl sl-icon-briefcase"></i>
+            </li>
+            <li class="side-icon" data-child-menu="misc-menu">
+                <i class="sl sl-icon-graph"></i>
+            </li>
+            <li class="side-icon" data-child-menu="settings-menu">
+                <i class="sl sl-icon-settings"></i>
+            </li>
+        </ul>
+        <!-- /Side icon menu -->    </div>
+</nav>
+<!-- /Main sidebar menu -->        <!-- Child push sidebar menu -->
+<nav class="child-menu">
+    <div class="child-menu-inner">
+        <!-- Child menu header -->
+        <ul>
+            <li class="child-header">
+                <div class="sidebar-title">导航栏</div>
+                <a id="close-child-menu" href="#" class="menu-wrapper">
+                            <span class="icon-box-toggle ef-4">
+                                <span class="rotate">
+                                    <i class="icon-line-top"></i>
+                                    <i class="icon-line-center"></i>
+                                    <i class="icon-line-bottom"></i>
+                                </span>
+                            </span>
+                </a>
+            </li>
+        </ul>
+        <!-- /Child menu header -->
+        <!-- Sidebar menu 1 -->
+        <ul id="dashboard-menu" class="sidebar-menu is-active animated preFadeInRIght fadeInRight">
+            <li class="have-children"><a class="parent-link" href="#"><span class="material-icons">dashboard</span>Dashboard</a>
+                <ul>
+                    <li><a class="function-link" href="javascript:void(0);" data-href="modules/blank.html">Blank Page</a></li>
+                    <li><a class="function-link" href="javascript:void(0);" data-href="modules/table.html">Table Page</a></li>
+                    <li><a class="function-link" href="javascript:void(0);" data-href="modules/editor.html">Editor Page</a></li>
+                </ul>
+            </li>
+            <li class="have-children"><a class="parent-link" href="#"><span class="material-icons">insert_chart</span>Analytics</a>
+                <ul>
+                    <li><a href="dashboard-chartjs.html">Chart js</a></li>
+                    <li><a href="dashboard-billboardjs.html">Billboard js</a></li>
+                    <li><a href="dashboard-peityjs.html">Peity js</a></li>
+                </ul>
+            </li>
+            <li class="have-children"><a class="parent-link" href="#"><span class="material-icons">developer_board</span>Widgets</a>
+                <ul>
+                    <li><a href="dashboard-widgets-data.html">Data widgets</a></li>
+                    <li><a href="dashboard-widgets-social.html">Social widgets</a></li>
+                </ul>
+            </li>
+            <li class="have-children"><a class="parent-link" href="#"><span class="material-icons">view_agenda</span>Feed</a>
+                <ul>
+                    <li><a href="dashboard-feed.html">Social feed</a></li>
+                    <li><a href="dashboard-feed-post.html">Post Item</a></li>
+                </ul>
+            </li>
+            <li class="have-children"><a class="parent-link" href="#"><span class="material-icons">invert_colors</span>Styles</a>
+                <ul>
+                    <li><a href="/">Light sidebar</a></li>
+                    <li><a href="dashboard-dark-nav.html">Dark sidebar</a></li>
+                </ul>
+            </li>
+        </ul>
+        <!-- /Sidebar menu 1 -->
+        <!-- Sidebar menu 1 -->
+        <ul id="user-menu" class="sidebar-menu is-active animated preFadeInRIght fadeInRight">
+            <li><a class="function-link" href="javascript:void(0);" data-href="modules/user/users.html"><span class="material-icons">people</span>用户管理</a>
+            </li>
+        </ul>
+        <!-- /Sidebar menu 1 -->
+        <!-- Sidebar menu 2 -->
+        <ul id="documents-menu" class="sidebar-menu animated preFadeInRIght fadeInRight">
+            <li class="have-children"><a class="parent-link" href="#"><span class="material-icons">insert_drive_file</span>Documents</a>
+                <ul>
+                    <li><a href="dashboard-document-list.html">Document list <span class="tag is-primary font-w-600 ml-10">2.1</span></a></li>
+                    <li><a href="dashboard-document-details.html">Document details <span class="tag is-primary font-w-600 ml-10">2.1</span></a></li>
+                    <li><a href="dashboard-document-invoice.html">Invoice <span class="tag is-primary font-w-600 ml-10">2.1</span></a></li>
+                </ul>
+            </li>
+            <li class="have-children"><a class="parent-link" href="#"><span class="material-icons">assignment</span>Projects</a>
+                <ul>
+                    <li><a href="dashboard-project-list.html">Project list <span class="tag is-secondary font-w-600 ml-10">2.0</span></a></li>
+                    <li><a href="dashboard-project-details.html">Project details <span class="tag is-secondary font-w-600 ml-10">2.0</span></a></li>
+                </ul>
+            </li>
+            <li class="have-children"><a class="parent-link" href="#"><span class="material-icons">assignment_turned_in</span>Tasks</a>
+                <ul>
+                    <li><a href="dashboard-project-task.html">Single Task <span class="tag is-secondary font-w-600 ml-10">2.0</span></a></li>
+                    <li><a href="dashboard-project-mytasks.html">My Tasks <span class="tag is-secondary font-w-600 ml-10">2.0</span></a></li>
+                    <li><a href="dashboard-events-board.html">Events <span class="tag is-primary font-w-600 ml-10">2.1</span></a></li>
+                </ul>
+            </li>
+        </ul>
+        <!-- /Sidebar menu 2 -->
+        <!-- Sidebar menu 3 -->
+        <ul id="business-menu" class="sidebar-menu animated preFadeInRIght fadeInRight">
+            <li class="have-children"><a class="parent-link" href="#"><span class="material-icons">group</span>Contacts</a>
+                <ul>
+                    <li><a href="dashboard-contacts-list.html">Contact list <span class="tag is-primary font-w-600 ml-10">2.1</span></a></li>
+                    <li><a href="dashboard-contacts-grid.html">Contact grid <span class="tag is-primary font-w-600 ml-10">2.1</span></a></li>
+                    <li><a href="dashboard-contacts-single.html">Contact details <span class="tag is-primary font-w-600 ml-10">2.1</span></a></li>
+                </ul>
+            </li>
+            <li class="have-children"><a class="parent-link" href="#"><span class="material-icons">person_add</span>CRM</a>
+                <ul>
+                    <li><a href="javascript:void(0);">Deals Kanban <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                    <li><a href="javascript:void(0);">Single Deal <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                </ul>
+            </li>
+            <li class="have-children"><a class="parent-link" href="#"><span class="material-icons">insert_comment</span>Support Desk</a>
+                <ul>
+                    <li><a href="javascript:void(0);">Support Tickets <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                    <li><a href="javascript:void(0);">Single Ticket <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                </ul>
+            </li>
+        </ul>
+        <!-- /Sidebar menu 3 -->
+        <!-- Sidebar menu 4 -->
+        <ul id="misc-menu" class="sidebar-menu animated preFadeInRIght fadeInRight">
+            <li class="have-children"><a class="parent-link" href="#"><span class="material-icons">grid_on</span>Datatables</a>
+                <ul>
+                    <li><a href="dashboard-datatable-basic.html">Basic Datatable <span class="tag is-secondary font-w-600 ml-10">2.0</span></a></li>
+                    <li><a href="dashboard-datatable-variations.html">Variations <span class="tag is-secondary font-w-600 ml-10">2.0</span></a></li>
+                    <li><a href="dashboard-datatable-advanced.html">Advanced Example <span class="tag is-secondary font-w-600 ml-10">2.0</span></a></li>
+                </ul>
+            </li>
+            <li class="have-children"><a class="parent-link" href="#"><span class="material-icons">speaker_notes</span>Faq</a>
+                <ul>
+                    <li><a href="javascript:void(0);">Faq home <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                    <li><a href="javascript:void(0);">Faq article <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                </ul>
+            </li>
+            <li class="have-children"><a class="parent-link" href="#"><span class="material-icons">thumbs_up_down</span>Forum</a>
+                <ul>
+                    <li><a href="javascript:void(0);">Forum home <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                    <li><a href="javascript:void(0);">Forum thread <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                </ul>
+            </li>
+            <li class="have-children"><a class="parent-link" href="#"><span class="material-icons">email</span>Mailbox</a>
+                <ul>
+                    <li><a href="javascript:void(0);">Inbox <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                    <li><a href="javascript:void(0);">Compose <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                </ul>
+            </li>
+        </ul>
+        <!-- /Sidebar menu 4 -->
+        <!-- Sidebar menu 5 -->
+        <ul id="settings-menu" class="sidebar-menu animated preFadeInRIght fadeInRight">
+            <li class="have-children"><a class="parent-link" href="#"><span class="material-icons">settings</span>Global settings</a>
+                <ul>
+                    <li><a href="javascript:void(0);">Preferences <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                    <li><a href="javascript:void(0);">Change password <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                </ul>
+            </li>
+            <li class="have-children"><a class="parent-link" href="#"><span class="material-icons">account_circle</span>User settings</a>
+                <ul>
+                    <li><a href="javascript:void(0);">User list <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                    <li><a href="javascript:void(0);">Add user <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                    <li><a href="javascript:void(0);">Access rights <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                </ul>
+            </li>
+            <li class="have-children"><a class="parent-link" href="#"><span class="material-icons">domain</span>Organizations</a>
+                <ul>
+                    <li><a href="javascript:void(0);">Organizations list <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                    <li><a href="javascript:void(0);">Add organization <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                </ul>
+            </li>
+        </ul>
+        <!-- /Sidebar menu 5 -->    </div>
+</nav>
+<!-- /Child push sidebar menu -->        <!-- Top Navbar -->
+<nav class="navbar dashboard-nav has-shadow">
+    <div class="container is-fluid">
+        <!-- Global search (desktop and tablet only) -->
+        <div class="navbar-item nav-icon search-button search-icon modal-trigger" data-modal="search-modal">
+            <i class="sl sl-icon-magnifier"></i>
+        </div>
+        <!-- /Global search -->
+
+        <!-- Nav right -->
+        <div class="navbar-menu">
+            <div class="navbar-end">
+                <!-- Logout button -->
+                <div class="navbar-item nav-icon logout-button">
+                    <i class="sl sl-icon-power"></i>
+                </div>
+                <!-- /Logout button -->
+            </div>
+        </div>
+        <!-- /Nav right -->
+    </div>
+</nav>
+<!-- /Top Navbar -->        <div class="mobile-nav is-hidden-desktop">
+    <div class="container is-fluid">
+        <div class="mobile-nav-inner">
+            <a class="mobile-item">
+                <i class="sl sl-icon-bell"></i>
+                <span class="new-circle gelatine"></span>
+            </a>
+            <a class="mobile-item">
+                <i class="sl sl-icon-envelope-open"></i>
+                <span class="new-circle gelatine"></span>
+            </a>
+            <a class="mobile-item modal-trigger" data-modal="search-modal">
+                <i class="sl sl-icon-magnifier"></i>
+            </a>
+            <a class="mobile-item" data-show="quickview" data-target="main-quickview">
+                <i class="sl sl-icon-bubble"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Main dashboard container -->
+<div id="dashboard-wrapper" class="columns">
+    <div class="content column is-12">
+
+        <!-- Breadcrumbs
+        <nav class="breadcrumbs">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li>Dashboard</li>
+            </ul>
+        </nav> -->
+        <!-- /Breadcrumbs -->
+
+        <!-- Dashboard Wrapper -->
+        <div class="main-dashboard-wrapper">
+
+            <div class="columns">
+                <div class="column">
+                    <!-- Main content -->
+                    <div id="main-content" class="section-wrapper">
+                        <!-- Dashboard content -->
+                        <!-- <div class="columns dashboard-columns"> -->
+
+                        <!-- YOUR CONTENT COLUMNS GO HERE -->
+
+                        <!-- </div> -->
+                        <!-- /Dashboard content -->
+                    </div>
+                    <!-- /Main content -->
+                </div>
+                <!-- /Main view -->
+            </div>
+        </div>
+        <!-- /Dashboard Wrapper -->
+    </div>
+</div>
+<!-- Main dashboard container -->
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <!-- <div class="has-text-centered">
+            <div class="has-text-centered">
+                <img class="small-footer-logo" src="assets/images/logos/bulkit-logo-g.png" alt="">
+            </div>
+        </div> -->
+        <div class="has-text-centered">
+            <span class="more-info-company">WADMIN-管理系统@2018</span>
+        </div>
+    </div>
+</footer>
+<!-- /Footer -->        <!-- Search Modal -->
+<div id="search-modal" class="modal modal-lg modal-hero">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <div class="control-material has-icon is-light">
+            <input class="material-input" type="text" placeholder="Search..." required autofocus>
+            <i class="material-icons">search</i>
+            <span class="material-highlight"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+    <button class="modal-close is-large is-hidden" aria-label="close"></button>
+</div>
+<!-- Search modal -->        <!-- Concatenated jQuery and plugins -->
+<script src="assets/js/app.js"></script>
+
+<!-- Bulkit js -->
+<script src="assets/js/components-modals.js"></script>
+<script src="assets/js/components-quickview.js"></script>
+<script src="assets/js/common.js"></script>
+<script src="assets/js/dashboard.js"></script>
+
+<!-- Extensions js -->
+<script src="assets/js/main.js"></script>
+<!-- <script src="assets/js/documents.js"></script>
+<script src="assets/js/contacts.js"></script>
+<script src="assets/js/projects.js"></script> -->
+<script src="assets/js/datatable.js"></script>    </body>
+</html>
